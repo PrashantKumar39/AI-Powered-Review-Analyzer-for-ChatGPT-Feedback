@@ -1,4 +1,4 @@
-# ChatGPT-Review-Sentiment-Analyzer
+# AI-Powered Review Analyzer for ChatGPT Feedback
 
 # 1. Introduction 
 
