@@ -1,183 +1,107 @@
-# AI-Powered Review Analyzer for ChatGPT Feedback
+# ChatGPT Review Sentiment Analysis
+
+This project implements a complete Natural Language Processing (NLP) system for sentiment analysis of ChatGPT reviews. The application analyzes review text to determine whether sentiments are positive, neutral, or negative, and provides visualizations of the results.
 
-# 1. Introduction 
+## Features
 
-AI-Powered Review Analyzer for ChatGPT Feedback is an intelligent sentiment analysis system designed to evaluate user feedback on a ChatGPT-based application. Using the power of Natural Language Processing (NLP), Machine Learning (ML), and Deep Learning (DL), this project classifies user reviews into Positive, Neutral, or Negative sentiments. By doing so, it provides actionable insights to enhance customer experience, refine product features, and optimize support and marketing strategies.
+- **Text Preprocessing**: Cleaning, tokenization, lemmatization, and stopword removal
+- **Sentiment Analysis**: Machine learning models to classify sentiments 
+- **Interactive Web Interface**: Streamlit-based UI for real-time sentiment analysis
+- **Data Visualization**: Interactive charts and dashboards to explore the dataset
+- **Multi-Model Comparison**: Training and evaluation of multiple ML models
 
-# 2. Purpose
+## Project Structure
 
-The primary objective of this project is to analyze user reviews of a conversational AI application and extract meaningful insights regarding customer satisfaction. Through sentiment classification, we aim to:
+- `data_preprocessing.py`: Data loading, cleaning, and preprocessing
+- `model_training.py`: ML model training, evaluation, and persistence
+- `exploratory_analysis.py`: Statistical analysis and visualization scripts
+- `streamlit_app.py`: Interactive web application
+- `requirements.txt`: Required Python dependencies
 
-- Understand user opinions
+## Dataset
 
-- Identify potential areas for improvement
+The dataset contains ChatGPT reviews with:
+- Review text and title
+- Ratings (1-5 scale)
+- User information
+- Platform details (Web/Mobile)
+- Language and location information
+- Version information
 
-- Monitor brand perception
+## Setup and Installation
 
-- Drive product decisions using data
+1. **Clone the repository or download the project files**
 
-# 3. Tech Stack
+2. **Install the required Python packages**:
+   ```
+   pip install -r requirements.txt
+   ```
 
-- Languages: Python
+3. **Run the data preprocessing**:
+   ```
+   python data_preprocessing.py
+   ```
 
-- Libraries/Frameworks: Pandas, NLTK, Scikit-learn, Matplotlib, Seaborn, Plotly
+4. **Train the sentiment analysis models**:
+   ```
+   python model_training.py
+   ```
 
-- Models: Naive Bayes, Logistic Regression, Random Forest, LSTM, BERT
+5. **Generate visualizations (optional)**:
+   ```
+   python exploratory_analysis.py
+   ```
 
-- Deployment: Streamlit, Flask, AWS (optional)
+6. **Launch the Streamlit web application**:
+   ```
+   streamlit run streamlit_app.py
+   ```
 
-- Tools: Jupyter Notebook, GitHub**
+## Web Application
 
+The Streamlit application provides:
+- A sentiment analysis tool for any text input
+- Interactive dashboards with dataset insights
+- Word clouds showing most frequent terms by sentiment
+- Rating distributions and analysis
+- Platform and language analysis
 
+## Model Information
 
+The system trains multiple models and selects the best one:
+- **Multinomial Naive Bayes**
+- **Logistic Regression**
+- **Random Forest**
+- **Support Vector Machine (SVM)**
 
-# 4. Project Scope
+Feature extraction is done using TF-IDF (Term Frequency-Inverse Document Frequency) vectorization.
 
-This project focuses on analyzing customer reviews submitted for ChatGPT versions across different platforms (Web/Mobile). The sentiment classification model categorizes reviews, identifies major themes and concerns, and provides visual insights into user experience trends.
+## Example Usage
 
+1. Open the Streamlit web app
+2. Navigate to the "Sentiment Analysis" page
+3. Enter or paste review text
+4. Click "Analyze Sentiment" to get the prediction
+5. Explore the "Dashboard" page for dataset insights
 
+## Requirements
 
-# 5. Features
+- Python 3.7+
+- Pandas
+- NumPy
+- Scikit-learn
+- NLTK
+- Streamlit
+- Matplotlib
+- Seaborn
+- Plotly
+- WordCloud
 
-- Clean and preprocess user review data
+## License
 
-- Perform EDA to discover patterns and outliers
+This project is created for educational purposes.
 
-- Train and evaluate sentiment classification models
+## Acknowledgments
 
-- Deploy web dashboard for interactive sentiment exploration
-
-- Predict sentiment from new reviews
-
-- Visualize sentiment by time, location, platform, and other factors
-
-
-
-6. Dataset
-
-- Source: ChatGPT Reviews Dataset (link: chatgpt_reviews)
-
-- Fields:
-
-- date: Review submission date
-
-- title: Headline of the review
-
-- review: Full review text
-
-- rating: Numeric rating (1 to 5)
-
-- username: Reviewer alias
-
-- helpful_votes: Count of helpful votes
-
-- review_length: Character length of the review
-
-- platform: Web or Mobile
-
-- language: Review language (e.g., 'en')
-
-- location: Country of origin
-
-- version: ChatGPT version
-
-- verified_purchase: Indicates if the user is a paid subscriber
-
-
-# 6. EDA Visualizations
-
-We conducted Exploratory Data Analysis (EDA) to extract key insights from user reviews. A bar chart of review ratings (1–5 stars) revealed overall satisfaction, while a pie chart highlighted the most helpful reviews. Word clouds showcased frequent terms in both positive and negative feedback. Trends over time were visualized using a line chart, and location-based differences were analyzed through maps and bar charts. We compared sentiment across platforms (Web vs. Mobile), and between verified and non-verified users. A box plot showed the relationship between review length and rating, while a negative word cloud focused on 1-star reviews. Finally, we assessed ratings by ChatGPT version using bar charts. These visualizations guided our modeling and interpretation steps.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# 7. Result:- 
-
-
-<img width="1440" alt="Screenshot 2025-06-12 at 21 57 01" src="https://github.com/user-attachments/assets/ae6d255b-3001-4fba-8b3d-66896c408da8" />
-
-<img width="1440" alt="Screenshot 2025-06-12 at 21 55 45" src="https://github.com/user-attachments/assets/7ae3d6f9-0964-41e6-92fa-ed392991f0b1" />
-
-# Dashboard:
-- Sentiment Distribution: Clear breakdown of sentiment categories
-
-- Feature Importance: Key terms driving classification
-
-- Model Metrics: Accuracy, precision, recall, F1-score, AUC-ROC
-
-- Insights: Negative themes, satisfaction trends, improvement suggestions
-
- - Interactive visualization using Streamlit 
-<img width="1440" alt="Screenshot 2025-06-12 at 21 57 31" src="https://github.com/user-attachments/assets/7e0a3fcb-72c9-4bd2-904e-46fd14cb0a3a" />
-<img width="1440" alt="Screenshot 2025-06-12 at 21 57 52" src="https://github.com/user-attachments/assets/ec70403a-a249-4378-9297-6397db9ef7ab" />
-
-
-
-
-
-# 8. Conclusion
-
-AI-Powered Review Analyzer for ChatGPT Feedback delivers a powerful, data-driven perspective on user feedback, enabling smarter decisions in customer experience, marketing, and product design. With robust preprocessing, effective modeling, and actionable visualizations, this project showcases the impact of AI in sentiment-driven analytics.
-
-# 9. Acknowledgments
-
-- Special thanks to: The course instructors and mentors for guidance and project resources
-
-- OpenAI and HuggingFace for pre-trained NLP models
-
-- All reviewers whose data enabled this analysis
-
-
-
-# Created By :- @2025 Prashant Kumar
+- Dataset: ChatGPT reviews
+- NLP techniques based on modern sentiment analysis approaches
